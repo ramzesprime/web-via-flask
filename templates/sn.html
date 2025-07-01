@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="product-card">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename=name) }}" alt="Фото товара">
+        </div>
+        <div class="product-info">
+            <h1 class="product-title">Описание товара</h1>
+            <h1 class="product-title">{{name_pr}}</h1>
+            <p class="product-description">{{ data }}</p>
+            
+            <div class="button-group">
+                <a href="#" class="btn buy-btn">Купить</a>
+                <a href="{{ url_for('FAQ') }}" class="btn back-btn">На главную</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

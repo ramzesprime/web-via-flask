@@ -1,0 +1,30 @@
+<html>
+<head>
+    {%block name%}<h1 id="minishapka" align="left">Home page</h1>{%endblock%}
+    {%if user%}
+    <div class="user">
+        <h1 align="right">User:{{user}}</h1>
+        <a href = "/unlog"><h1 align="right">Sign out</h1> </a>
+    </div>
+    {%else%}
+    <div class="user">
+        <h1 align="right">No user</h1>
+    </div>
+    {%endif%}
+        <link  rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <div class = "hat">
+        {%block title%}
+        <h1 id="shapka" align="left">Welcome to my web site!</h1>
+        {%endblock%}
+    </div>
+</head>
+<body >
+    {%block body%}
+        <a href='/FAQ'><h1 align="center">FAQ</h1></a>
+        <a href="/reg" > <h1 align="center">Sign Up</h1></a>
+        <a href="/log" > <h1 align="center">Sign In</h1></a>
+        <a href='/FAQ'><h1 align="center">FAQ</h1></a>
+        <a href="/reg" > <h1 align="center">Sign Up</h1></a>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+{%block name%}<h1 id="minishapka" align="left">Register page</h1>{%endblock%}
+{%block body%}
+<a href="/"><h1 align="center">go back</h1></a>
+    {%if error901%}
+    <script src="{{url_for('static', filename='invalid_form.js')}}"></script>
+    {%endif%}
+    {%if error902%}
+    <script src="{{url_for('static', filename='email_already_taken.js')}}"></script>
+    {%endif%}
+<form method="POST">
+  <div class="form-group">
+    <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <input name = "password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input name = "checkbox" type="checkbox" class="form-check-input" id="exampleCheck1">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{%endblock%}

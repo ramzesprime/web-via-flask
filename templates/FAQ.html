@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+
+{% block name %}
+  <h1 id="minishapka" align="left">FAQ page</h1>
+{% endblock %}
+
+{% block title %}
+  <h1 id="shapka">Market place</h1>
+{% endblock %}
+{% block body %}
+<a href='/'><h1 align="center">GO TO MAIN PAGE</h1></a>
+<div class="image-grid">
+  {% for i in range(1, 33) %}
+    <div class="image-tile">
+      <a href="{{ url_for('image_detail', img_name=i ~ '.jpg') }}">
+        <img src="{{ url_for('static', filename=i ~ '.jpg') }}" alt="Image {{ i }}">
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
