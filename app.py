@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, make_response, session
 from SQL_handler import SQL_handler
+import os, random, string
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+   return ''.join(random.choice(chars) for _ in range(size))
 
 app = Flask(__name__)
-app.secret_key = "porno"
+app.secret_key = id_generator()
 
 sql = SQL_handler()
 sql.table_create()
